@@ -108,3 +108,36 @@ while place_order:
             
             if menu_selection.isdigit():
                 menu_selection = int(menu_selection)
+                
+                if menu_selection in menu_items.keys():
+                    item_name = menu_items[menu_selection]["Item name"]
+                    quantity = input(f"How many {item_name}s would you like? (Default is 1): ")
+                    
+                    if not quantity.isdigit():
+                        print("Invalid input. Quantity set to 1 by default.")
+                        quantity = 1
+                    else:
+                        quantity = int(quantity)
+                        
+                    order.append({
+                            "Item name": item_name,
+                            "Price": menu_items[menu_selection]["Price"],
+                            "Quantity": quantity
+                        })
+                    
+                else:
+                    print("Invalid selection. Please choose a valid item number.")
+            
+            else:        
+                print("Invalid input. Please enter a number.")
+                
+        else:
+            print(f"{menu_category} was not a menu option.")
+            
+    else:
+        print("You didn't select a number.")
+
+    while True:
+        keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
+        
+        
