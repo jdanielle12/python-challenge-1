@@ -50,34 +50,18 @@ menu = {
     }
 }
 
-# 1. Set up order list. Order list will store a list of dictionaries for
-# menu item name, item price, and quantity ordered
-order = [
-    {
-        "Item name": "string",
-        "Price": float,
-        "Quantity": int
-    },
-    {
-        "Item name": "string",
-        "Price": float,
-        "Quantity": int
-    }
-]
+#Order List
+order = []
 
-# Launch the store and present a greeting to the customer
+#Greeting
 print("Welcome to the variety food truck.")
 
-# Customers may want to order multiple items, so let's create a continuous
-# loop
+#Order Loop
 place_order = True
 while place_order:
-    # Ask the customer from which menu category they want to order
     print("From which menu would you like to order? ")
 
-    # Create a variable for the menu item number
     i = 1
-    # Create a dictionary to store the menu for later retrieval
     menu_items = {}
 
     # Print the options to choose from menu headings (all the first level

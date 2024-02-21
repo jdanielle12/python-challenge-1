@@ -1,3 +1,4 @@
+#Menu Dictionary
 menu = {
     "Snacks": {
         "Cookie": .99,
@@ -49,3 +50,16 @@ menu = {
     }
 }
 
+#Order List
+order = []
+
+#Greeting
+print("Welcome to the variety food truck.")
+
+#Order Loop
+place_order = True
+while place_order:
+    print("From which menu would you like to order? ")
+    
+    i = 1
+    menu_items = {}
