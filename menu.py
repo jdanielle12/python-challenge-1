@@ -64,35 +64,27 @@ while place_order:
     i = 1
     menu_items = {}
 
-    # Print the options to choose from menu headings (all the first level
-    # dictionary items in menu).
+    #Menu Items
     for key in menu.keys():
         print(f"{i}: {key}")
-        # Store the menu category associated with its menu item number
         menu_items[i] = key
-        # Add 1 to the menu item number
         i += 1
 
-    # Get the customer's input
+    #Customer Input
     menu_category = input("Type menu number: ")
 
-    # Check if the customer's input is a number
     if menu_category.isdigit():
-        # Check if the customer's input is a valid option
         if int(menu_category) in menu_items.keys():
-            # Save the menu category name to a variable
             menu_category_name = menu_items[int(menu_category)]
-            # Print out the menu category name they selected
             print(f"You selected {menu_category_name}")
 
-            # Print out the menu options from the menu_category_name
             print(f"What {menu_category_name} item would you like to order?")
             i = 1
             menu_items = {}
             print("Item # | Item name                | Price")
             print("-------|--------------------------|-------")
+            
             for key, value in menu[menu_category_name].items():
-                # Check if the menu item is a dictionary to handle differently
                 if type(value) is dict:
                     for key2, value2 in value.items():
                         num_item_spaces = 24 - len(key + key2) - 3

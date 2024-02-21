@@ -63,3 +63,45 @@ while place_order:
     
     i = 1
     menu_items = {}
+    
+    #Menu Options
+    for key in menu.keys():
+        menu_items[i] = key 
+        i += 1
+        
+    #Customer Input
+    menu_category = input("Type menu number: ")
+    
+    if menu_category.isdigit():
+        if int(menu_category) in menu_items.keys():
+            menu_category_name = menu_items[int(menu_category)]
+            print(f"You selected {menu_category_name}")
+            
+            print(f"What {menu_category_name} item would you like to order?")
+            i = 1
+            menu_items = {}
+            print("Item # | Item name                | Price")
+            print("-------|--------------------------|-------")
+            
+            for key, value in menu[menu_category_name].items():
+                if type(value) is dict:
+                    for key2, value2 in value.items():
+                        num_item_spaces = 24 - len(key + key2) - 3
+                        item_spaces = " " * num_item_spaces
+                        print(f"{i}      | {key} - {key2}{item_spaces} | ${value2}")
+                        menu_items[i] = {
+                            "Item name": key + " - " + key2,
+                            "Price": value2
+                        }
+                        i += 1
+                else:
+                    num_item_spaces = 24 - len(key)
+                    item_spaces = " " * num_item_spaces
+                    print(f"{i}      | {key}{item_spaces} | ${value}")
+                    menu_items[i] = {
+                        "Item name": key,
+                        "Price": value
+                    }
+                    i += 1
+                    
+                    
