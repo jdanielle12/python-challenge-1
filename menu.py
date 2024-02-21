@@ -104,12 +104,11 @@ while place_order:
                         "Price": value
                     }
                     i += 1
-            # 2. Ask customer to input menu item number
+
             menu_selection = input("Enter the item number: ") 
 
-            # 3. Check if the customer typed a number
-
-                # Convert the menu selection to an integer
+            if menu_selection.isdigit():
+                menu_selection = int(menu_selection)
 
 
                 # 4. Check if the menu selection is in the menu items

@@ -104,4 +104,7 @@ while place_order:
                     }
                     i += 1
                     
-            menu_selection = input("Enter the item number: ")       
+            menu_selection = input("Enter the item number: ")
+            
+            if menu_selection.isdigit():
+                menu_selection = int(menu_selection)
