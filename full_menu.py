@@ -104,4 +104,4 @@ while place_order:
                     }
                     i += 1
                     
-                    
+            menu_selection = input("Enter the item number: ")       
