@@ -156,11 +156,12 @@ print("This is what we are preparing for you.\n")
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
-# 6. Loop through the items in the customer's order
-
-    # 7. Store the dictionary items as variables
-
-
+#Loop through the items in the customer's order
+for item in order:
+    item_name = item["Item name"]
+    price = item["Price"]
+    quantity = item["Quantity"]
+    
     # 8. Calculate the number of spaces for formatted printing
 
 
