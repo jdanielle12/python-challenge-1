@@ -142,9 +142,9 @@ while place_order:
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
 
         #Check customer's input
-        if keep_ordering == 'y':
+        if keep_ordering == 'Y':
             break 
-        elif keep_ordering == 'n':
+        elif keep_ordering == 'N':
             print("Thank you for your order!")
             place_order = False
             break 
@@ -168,9 +168,10 @@ for item in order:
     # Create space strings
     spaces = " " * num_spaces
 
-    # 10. Print the item name, price, and quantity
+    # Print the item name, price, and quantity
+    print(f"{item_name}{spaces}| ${price} | {quantity}")
 
-
-# 11. Calculate the cost of the order using list comprehension
-# Multiply the price by quantity for each item in the order list, then sum()
-# and print the prices.
+# 11. Calculate the cost
+# Multiply the price by quantity for each item, then sum()
+total_price = sum(item["Price"] * item["Quantity"] for item in order)
+print(f"\nTotal Price: ${total_price:.2f}")
