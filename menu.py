@@ -162,11 +162,11 @@ for item in order:
     price = item["Price"]
     quantity = item["Quantity"]
     
-    # 8. Calculate the number of spaces for formatted printing
+    # Calculate the number of spaces for formatted printing
+    num_spaces = 26 - len(item_name)
 
-
-    # 9. Create space strings
-
+    # Create space strings
+    spaces = " " * num_spaces
 
     # 10. Print the item name, price, and quantity
 
